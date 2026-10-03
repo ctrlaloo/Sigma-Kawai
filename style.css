@@ -1,0 +1,83 @@
+/* ===== COLORES: para cambiar un color se cambia aquí ===== */
+:root{--rosa:#ffb3d1;--lila:#cdb4ff;--amarillo:#fff2a8;--azul:#a8d8ff;--verde:#b5ead7;--texto:#4a3f6b;}
+html{scroll-behavior:smooth;} /* desplazamiento suave al usar enlaces #etapa1, #etapa2... */
+body{margin:0;font-family:"Trebuchet MS",Verdana,sans-serif;color:var(--texto);line-height:1.5;
+ background:linear-gradient(#e8f4ff,#fdeaf6 50%,#fffbe0);} /* fondo degradado de cielo */
+/* Encabezado con borde en forma de arcoíris */
+header{text-align:center;padding:15px 10px 8px;background:#fffa;border-bottom:8px solid;
+ border-image:linear-gradient(90deg,#ff9ec4,#ffd89e,#fff2a8,#b5ead7,#a8d8ff,#cdb4ff) 1;}
+header h1{margin:0 0 8px;font-size:1.6em;}
+nav a{display:inline-block;margin:3px;padding:4px 12px;border-radius:20px;background:var(--lila);color:var(--texto);text-decoration:none;}
+nav a:hover{background:var(--amarillo);}
+main{max-width:1000px;margin:auto;padding:20px;}
+h2{text-align:center;}
+img{max-width:100%;border-radius:12px;}
+footer{text-align:center;padding:20px;}
+a.boton,button{background:var(--c,var(--lila));color:var(--texto);border:0;border-radius:20px;padding:6px 16px;font:inherit;cursor:pointer;text-decoration:none;display:inline-block;}
+.portada{text-align:center;}
+.caja{background:#fff;border:3px dashed var(--lila);border-radius:15px;padding:10px 20px;margin:15px auto;max-width:800px;}
+table{border-collapse:collapse;background:#fff;margin:10px auto;}
+th,td{border:2px solid var(--lila);padding:6px 10px;}
+/* Colores de cada etapa (--c lo usan las tarjetas, los puntos y los botones) */
+.e1{--c:#ffb3d1;} .e2{--c:#a8d8ff;} .e3{--c:#cdb4ff;}
+h2.etapa{background:var(--c);border-radius:20px;padding:12px;margin-top:50px;}
+/* ===== LÍNEA DEL TIEMPO ===== */
+/* .linea es el contenedor; su ::before dibuja la franja de arcoíris en el centro */
+.linea{position:relative;margin-top:20px;}
+.linea::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:8px;margin-left:-4px;border-radius:4px;
+ background:linear-gradient(#ff9ec4,#fff2a8,#b5ead7,#a8d8ff,#cdb4ff);}
+/* Cada tarjeta mide casi la mitad de la página; las impares van a la izquierda y las pares a la derecha */
+.evento{position:relative;width:calc(50% - 40px);box-sizing:border-box;margin-bottom:25px;
+ background:#fff;border:4px solid var(--c);border-radius:18px;padding:12px 16px;}
+.evento:nth-child(even){margin-left:auto;}
+/* El círculo de color que une la tarjeta con la línea */
+.evento::after{content:"";position:absolute;top:18px;width:22px;height:22px;border-radius:50%;
+ background:var(--c);border:3px solid #fff;right:-51px;}
+.evento:nth-child(even)::after{right:auto;left:-51px;}
+.anio{display:inline-block;background:var(--c);border-radius:20px;padding:2px 14px;margin:0 0 6px;font-size:1.4em;}
+.evento h4{margin:4px 0;}
+.extra{display:none;background:#fffbe0;border-radius:10px;padding:8px;margin-top:8px;} /* oculto hasta pulsar "Ver más" */
+.indice{text-align:center;}
+/* En celulares: la línea pasa a la izquierda y todas las tarjetas van a la derecha */
+@media(max-width:700px){
+ .linea::before{left:15px;margin-left:0;}
+ .evento,.evento:nth-child(even){width:auto;margin-left:40px;}
+ .evento::after,.evento:nth-child(even)::after{left:-32px;right:auto;}
+}
+
+/* ===================================================== */
+/* ===== TEMA ARCOÍRIS: más estrellas, nubes y brillos ===== */
+/* ===================================================== */
+/* Fondo de cielo con "brillitos": puntos blancos repetidos sobre el degradado */
+body{font-family:"Comic Sans MS","Chalkboard SE","Trebuchet MS",sans-serif;
+ background:radial-gradient(#fff 1.5px,transparent 2.5px) 0 0/70px 70px,
+            radial-gradient(#fff 1px,transparent 2px) 35px 35px/70px 70px,
+            linear-gradient(#e0f0ff,#fbe3f4 50%,#fffbe0);}
+/* Título con sombras de colores apiladas */
+header h1{color:var(--texto);text-shadow:2px 2px 0 #fff,4px 4px 0 var(--rosa),6px 6px 0 var(--azul);}
+/* Nubes y estrellas a los lados del encabezado */
+header{position:relative;}
+header::before{content:"☁ ✦ ★";position:absolute;left:15px;top:12px;font-size:1.5em;color:var(--azul);}
+header::after{content:"★ ✦ ☁";position:absolute;right:15px;top:12px;font-size:1.5em;color:var(--rosa);}
+/* Arcoíris de la portada: círculos de colores que parten del centro (radial-gradient) */
+.portada::before{content:"";display:block;width:260px;height:130px;margin:0 auto 10px;
+ background:radial-gradient(circle at 50% 100%,transparent 0 40px,#cdb4ff 40px 55px,#a8d8ff 55px 70px,
+ #b5ead7 70px 85px,#fff2a8 85px 100px,#ffd89e 100px 115px,#ff9ec4 115px 130px,transparent 130px);}
+/* Título de cada etapa con franjas de arcoíris debajo (box-shadow apilados) */
+h2.etapa{margin-bottom:35px;box-shadow:0 6px 0 var(--amarillo),0 12px 0 var(--verde),0 18px 0 var(--azul);}
+/* Tarjetas tipo "sticker" con sombra de color */
+.evento{border-radius:24px;box-shadow:5px 5px 0 var(--c);}
+.caja{border-radius:24px;}
+.anio::before{content:"✦ ";}
+a.boton:hover,button:hover,nav a:hover{transform:scale(1.08);}
+/* Las estrellas ★ reemplazan a los círculos de la línea del tiempo */
+.evento::after{content:"★";width:34px;height:34px;line-height:34px;text-align:center;font-size:32px;
+ background:none;border:0;top:6px;right:-61px;color:var(--c);-webkit-text-stroke:1.5px var(--texto);
+ animation:brillo 2.5s ease-in-out infinite;}
+.evento:nth-child(even)::after{right:auto;left:-61px;}
+@keyframes brillo{50%{transform:scale(1.25) rotate(15deg);}}
+@media(max-width:700px){
+ header::before,header::after{display:none;}
+ .evento::after,.evento:nth-child(even)::after{left:-42px;right:auto;}
+}
+@media(prefers-reduced-motion:reduce){.evento::after{animation:none;}}
