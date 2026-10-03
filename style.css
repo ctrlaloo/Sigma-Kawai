@@ -38,7 +38,7 @@ h2.etapa{background:var(--c);border-radius:20px;padding:12px;margin-top:50px;}
 .evento h4{margin:4px 0;}
 .extra{display:none;background:#fffbe0;border-radius:10px;padding:8px;margin-top:8px;} /* oculto hasta pulsar "Ver más" */
 .indice{text-align:center;}
-
+/* En celulares: la línea pasa a la izquierda y todas las tarjetas van a la derecha */
 @media(max-width:700px){
  .linea::before{left:15px;margin-left:0;}
  .evento,.evento:nth-child(even){width:auto;margin-left:40px;}
