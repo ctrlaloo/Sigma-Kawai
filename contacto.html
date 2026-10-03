@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header><h1>🌈 México ante las intervenciones extranjeras</h1>
+<nav><a href="index.html">Inicio</a> <a href="timeline.html">Línea del tiempo</a> <a href="multimedia.html">Multimedia</a> <a href="fuentes.html">Fuentes</a> <a href="contacto.html">Contacto</a></nav></header>
+<main>
+<h2>Contacto</h2>
+<!-- Formulario demostrativo: onsubmit llama a enviar() en js/script.js -->
+<form onsubmit="return enviar()">
+<fieldset>
+<legend>Déjanos tu comentario</legend>
+<p><label>Nombre: <input type="text" name="nombre" required></label></p>
+<p><label>Correo: <input type="email" name="correo" required></label></p>
+<p><label>Fecha: <input type="date" name="fecha"></label></p>
+<p>¿Qué intervención te llamó más la atención?<br>
+<select name="intervencion">
+<option>Primera Intervención Francesa</option>
+<option>Intervención Norteamericana</option>
+<option>Segunda Intervención Francesa</option>
+</select></p>
+<p><label>Comentario:<br><textarea name="comentario" rows="4" cols="40"></textarea></label></p>
+<button type="submit">Enviar</button>
+</fieldset>
+</form>
+</main>
+<footer>✦ ☁ ★ Proyecto escolar de programación ★ ☁ ✦</footer>
+<script src="js/script.js"></script>
+</body>
+</html>
